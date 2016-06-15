@@ -1,10 +1,9 @@
 // below checks if the user is already signed in
-(function () {
-    let user = firebase.auth().currentUser;
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         window.location = 'app.html';
     }
-})();
+});
 
 var regForm = document.querySelector('form#registrationForm');
 regForm.addEventListener('submit', function (event) {
